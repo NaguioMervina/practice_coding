@@ -23,9 +23,13 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                            <li class="nav-item active">
-                            <a class="nav-link" href="index.html">HOME<span class="sr-only">(current)</span></a> </li>
+                            <a class="nav-link" href="{{ route('logout') }}"onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">{{ __('Logout') }}<span class="sr-only">(current)</span></a> </li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                            </form>
                            <li class="nav-item">
-                            <a class="nav-link" href="about.html">ABOUT</a></li>
+                            <a class="nav-link" href="/new-login">{{ __('Login') }}</a></li>
                            <li class="nav-item">
                             <a class="nav-link" href="service.html">SERVICES</a></li>
                            <li class="#" href="#">
